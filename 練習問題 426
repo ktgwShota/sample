@@ -1,0 +1,747 @@
+node_groups:
+  初期応答:
+    contents:
+      - lineText: |-
+          {{ user.name }} さん、友だち追加ありがとうございます🌈✨
+          クリニックフォアです👩
+
+          このアカウントでは、女性あるあるの悩みとお別れして、ハッピーな毎日を送るための情報をお伝えします🌞
+
+          まずは、{{ user.name }} さんのお悩みとピルの相性を診断してみませんか？🌟
+        node_name: workspace-start
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/ab51a45930fd32c3aa9b7068d26442da067601019b091e8743b8d1204a5460d2.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/ab51a45930fd32c3aa9b7068d26442da067601019b091e8743b8d1204a5460d2.jpeg
+      - lineText: |-
+          回答結果がお友だちに伝わることはありませんので、ご安心ください😌
+      - buttonBubble:
+          notification_text: タップしてスタート✅
+          text: ピルとあなたの相性を…🌙
+          actions:
+            - type: postback
+              display_text: ▼タップして診断スタート▼
+              message_text: ▼タップして診断スタート▼
+              dest: 応答1
+        node_name: actionlayer-1-first
+  応答1:
+    contents:
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cb97f1a59b6c01bb107399770b80ccf67f470f7310e20005ef356a1e81c5592f.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cb97f1a59b6c01bb107399770b80ccf67f470f7310e20005ef356a1e81c5592f.jpeg
+      - buttonBubble:
+          notification_text: 生理前や生理中、どんな症状がありますか？🌙
+          text: |-
+            【1/5問目】生理前や生理中、どんな症状がありますか？👧🌙
+          actions:
+            - type: postback
+              display_text: お腹が痛くなる
+              message_text: お腹が痛くなる
+              tags:
+                - key: 1問目
+                  value: お腹が痛くなる
+              dest: お腹が痛くなる
+            - type: postback
+              display_text: 気分が不安定になる
+              message_text: 気分が不安定になる
+              tags:
+                - key: 1問目
+                  value: 気分が不安定になる
+              dest: 気分が不安定になる
+            - type: postback
+              display_text: 食欲が増す
+              message_text: 食欲が増す
+              tags:
+                - key: 1問目
+                  value: 食欲が増す
+              dest: 食欲が増す
+            - type: postback
+              display_text: いくつも当てはまる
+              message_text: いくつも当てはまる
+              tags:
+                - key: 1問目
+                  value: いくつも当てはまる
+              dest: いくつも当てはまる
+            - type: postback
+              display_text: 今のところない
+              message_text: 今のところない
+              tags:
+                - key: 1問目
+                  value: 今のところない
+              dest: 今のところない
+        node_name: actionlayer-2
+  お腹が痛くなる:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、お腹が痛くなるタイプなんですね🤔
+
+          実は、ピルは生理痛の改善にも効果があるんです🌙✨
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+      - buttonBubble:
+          notification_text: 生理開始日の周期は一定ですか？📅🌙
+          text: |-
+            【2/5問目】
+            生理開始日の周期は一定ですか？📅 🌙
+          actions:
+            - type: postback
+              display_text: バラバラ
+              message_text: バラバラ
+              tags:
+                - key: 2問目
+                  value: バラバラ
+              dest: 周期がバラバラ
+            - type: postback
+              display_text: 24日より短い
+              message_text: 24日より短い
+              tags:
+                - key: 2問目
+                  value: 24日より短い
+              dest: 周期が24日より短い
+            - type: postback
+              display_text: 39日より長い
+              message_text: 39日より長い
+              tags:
+                - key: 2問目
+                  value: 39日より長い
+              dest: 周期が39日より長い
+            - type: postback
+              display_text: 25～38日
+              message_text: 25～38日
+              tags:
+                - key: 2問目
+                  value: 25〜38日
+              dest: 周期が25～38日
+        node_name: actionlayer-3-actionid-1
+  気分が不安定になる:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、気分が不安定になるタイプなんですね🤔
+
+          ピルには女性ホルモンを安定させる効果があるので、気分の浮き沈みも改善できる可能性があります🌙✨
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+      - buttonBubble:
+          notification_text: 生理開始日の周期は一定ですか？📅🌙
+          text: |-
+            【2/5問目】
+            生理開始日の周期は一定ですか？📅 🌙
+          actions:
+            - type: postback
+              display_text: バラバラ
+              message_text: バラバラ
+              tags:
+                - key: 2問目
+                  value: バラバラ
+              dest: 周期がバラバラ
+            - type: postback
+              display_text: 24日より短い
+              message_text: 24日より短い
+              tags:
+                - key: 2問目
+                  value: 24日より短い
+              dest: 周期が24日より短い
+            - type: postback
+              display_text: 39日より長い
+              message_text: 39日より長い
+              tags:
+                - key: 2問目
+                  value: 39日より長い
+              dest: 周期が39日より長い
+            - type: postback
+              display_text: 25～38日
+              message_text: 25～38日
+              tags:
+                - key: 2問目
+                  value: 25〜38日
+              dest: 周期が25～38日
+        node_name: actionlayer-3-actionid-2
+  食欲が増す:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、食欲が増すタイプなんですね🤔
+
+          ピルには女性ホルモンを安定させる効果があるので、食欲増進を抑える効果も期待できます🌙✨
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+      - buttonBubble:
+          notification_text: 生理開始日の周期は一定ですか？📅🌙
+          text: |-
+            【2/5問目】
+            生理開始日の周期は一定ですか？📅 🌙
+          actions:
+            - type: postback
+              display_text: バラバラ
+              message_text: バラバラ
+              tags:
+                - key: 2問目
+                  value: バラバラ
+              dest: 周期がバラバラ
+            - type: postback
+              display_text: 24日より短い
+              message_text: 24日より短い
+              tags:
+                - key: 2問目
+                  value: 24日より短い
+              dest: 周期が24日より短い
+            - type: postback
+              display_text: 39日より長い
+              message_text: 39日より長い
+              tags:
+                - key: 2問目
+                  value: 39日より長い
+              dest: 周期が39日より長い
+            - type: postback
+              display_text: 25～38日
+              message_text: 25～38日
+              tags:
+                - key: 2問目
+                  value: 25〜38日
+              dest: 周期が25～38日
+        node_name: actionlayer-3-actionid-3
+  いくつも当てはまる:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、いくつも症状が出るタイプなんですね🤔
+
+          生理前や生理中のつらいアレコレ、ピルで解決できるかもしれません🌙✨
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+      - buttonBubble:
+          notification_text: 生理開始日の周期は一定ですか？📅🌙
+          text: |-
+            【2/5問目】
+            生理開始日の周期は一定ですか？📅 🌙
+          actions:
+            - type: postback
+              display_text: バラバラ
+              message_text: バラバラ
+              tags:
+                - key: 2問目
+                  value: バラバラ
+              dest: 周期がバラバラ
+            - type: postback
+              display_text: 24日より短い
+              message_text: 24日より短い
+              tags:
+                - key: 2問目
+                  value: 24日より短い
+              dest: 周期が24日より短い
+            - type: postback
+              display_text: 39日より長い
+              message_text: 39日より長い
+              tags:
+                - key: 2問目
+                  value: 39日より長い
+              dest: 周期が39日より長い
+            - type: postback
+              display_text: 25～38日
+              message_text: 25～38日
+              tags:
+                - key: 2問目
+                  value: 25〜38日
+              dest: 周期が25～38日
+        node_name: actionlayer-3-actionid-4
+  今のところない:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、今のところ症状がないんですね😄
+
+          生理前や生理中の症状はホルモンバランスの影響が大きいので、{{ user.name }}さんにも急に現れるかもしれません🌙
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/cf5e05aa09f5a4d5a86f0d762d34a4354a92f268f11806d1b6c3d9720377775b.jpeg
+      - buttonBubble:
+          notification_text: 生理開始日の周期は一定ですか？📅🌙
+          text: |-
+            【2/5問目】
+            生理開始日の周期は一定ですか？📅 🌙
+          actions:
+            - type: postback
+              display_text: バラバラ
+              message_text: バラバラ
+              tags:
+                - key: 2問目
+                  value: バラバラ
+              dest: 周期がバラバラ
+            - type: postback
+              display_text: 24日より短い
+              message_text: 24日より短い
+              tags:
+                - key: 2問目
+                  value: 24日より短い
+              dest: 周期が24日より短い
+            - type: postback
+              display_text: 39日より長い
+              message_text: 39日より長い
+              tags:
+                - key: 2問目
+                  value: 39日より長い
+              dest: 周期が39日より長い
+            - type: postback
+              display_text: 25～38日
+              message_text: 25～38日
+              tags:
+                - key: 2問目
+                  value: 25〜38日
+              dest: 周期が25～38日
+        node_name: actionlayer-3-actionid-5
+
+  周期がバラバラ:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、生理周期がバラバラなんですね😣
+
+          もしかすると、その生理不順は身体からのSOSサインかもしれません🆘🔔
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+      - buttonBubble:
+          notification_text: ニキビや肌荒れは気になりますか？💎
+          text: |-
+            【3/5問目】
+            ニキビや肌荒れは気になりますか？💎
+          actions:
+            - type: postback
+              display_text: 気になる
+              message_text: 気になる
+              tags:
+                - key: 3問目
+                  value: 気になる
+              dest: 気になる
+            - type: postback
+              display_text: たまに気になる
+              message_text: たまに気になる
+              tags:
+                - key: 3問目
+                  value: たまに気になる
+              dest: たまに気になる
+        node_name: actionlayer-4-actionid-1
+  周期が24日より短い:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、生理の間隔が24日より短いんですね😣間隔が短すぎるのも、生理不順の1つなんです🏥💦
+
+          もしかすると、その生理不順は身体からのSOSサインかもしれません🆘🔔
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+      - buttonBubble:
+          notification_text: ニキビや肌荒れは気になりますか？💎
+          text: |-
+            【3/5問目】
+            ニキビや肌荒れは気になりますか？💎
+          actions:
+            - type: postback
+              display_text: 気になる
+              message_text: 気になる
+              tags:
+                - key: 3問目
+                  value: 気になる
+              dest: 気になる
+            - type: postback
+              display_text: たまに気になる
+              message_text: たまに気になる
+              tags:
+                - key: 3問目
+                  value: たまに気になる
+              dest: たまに気になる
+        node_name: actionlayer-4-actionid-2
+  周期が39日より長い:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、生理の間隔が39日より長いんですね😣‍間隔が長すぎるのも、生理不順の1つなんです🏥💦
+
+           もしかすると、その生理不順は身体からのSOSサインかもしれません🆘🔔
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+      - buttonBubble:
+          notification_text: ニキビや肌荒れは気になりますか？💎
+          text: |-
+            【3/5問目】
+            ニキビや肌荒れは気になりますか？💎
+          actions:
+            - type: postback
+              display_text: 気になる
+              message_text: 気になる
+              tags:
+                - key: 3問目
+                  value: 気になる
+              dest: 気になる
+            - type: postback
+              display_text: たまに気になる
+              message_text: たまに気になる
+              tags:
+                - key: 3問目
+                  value: たまに気になる
+              dest: たまに気になる
+        node_name: actionlayer-4-actionid-3
+  周期が25～38日:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、生理周期が25～38日なんですね！その範囲内であれば、正常だと言われています😊
+
+          もし今後、生理周期が乱れた場合は、身体からのSOSサインかもしれないので見逃さないようにしましょう🆘🌙
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/a25ee328417ae59b63ce6d1b426e8ee66922104a72e8deecd51331ff0f237709.jpeg
+      - buttonBubble:
+          notification_text: ニキビや肌荒れは気になりますか？💎
+          text: |-
+            【3/5問目】
+            ニキビや肌荒れは気になりますか？💎
+          actions:
+            - type: postback
+              display_text: 気になる
+              message_text: 気になる
+              tags:
+                - key: 3問目
+                  value: 気になる
+              dest: 気になる
+            - type: postback
+              display_text: たまに気になる
+              message_text: たまに気になる
+              tags:
+                - key: 3問目
+                  value: たまに気になる
+              dest: たまに気になる
+        node_name: actionlayer-4-actionid-4
+  気になる:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、ニキビや肌荒れが気になるんですね😮
+
+          ニキビや肌荒れが起こる理由の一つは、生理前に増える黄体ホルモン⚡これも、ピルで解決できる可能性があるんです💡
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/2c2a0b06646a2b713c5217419cc23af31aa38b6b13a66a89af45d4f4230cdb71.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/2c2a0b06646a2b713c5217419cc23af31aa38b6b13a66a89af45d4f4230cdb71.jpeg
+      - buttonBubble:
+          notification_text: 予定と生理が被って困ったことはありますか
+          text: |-
+            【4/5問目】大事な予定と生理が被って困ったことはありますか？🌴
+          actions:
+            - type: postback
+              display_text: ある
+              message_text: ある
+              tags:
+                - key: 4問目
+                  value: ある
+              dest: ある
+            - type: postback
+              display_text: 近々その予定がある
+              message_text: 近々その予定がある
+              tags:
+                - key: 4問目
+                  value: 近々ある
+              dest: 近々その予定がある
+        node_name: actionlayer-5-actionid-1
+  たまに気になる:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、たまにニキビや肌荒れが気になるんですね😮
+
+          ニキビや肌荒れが起こる理由の一つは、生理前に増える黄体ホルモン⚡これも、ピルで解決できる可能性があるんです💡
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/2c2a0b06646a2b713c5217419cc23af31aa38b6b13a66a89af45d4f4230cdb71.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/2c2a0b06646a2b713c5217419cc23af31aa38b6b13a66a89af45d4f4230cdb71.jpeg
+      - buttonBubble:
+          notification_text: 予定と生理が被って困ったことはありますか
+          text: |-
+            【4/5問目】大事な予定と生理が被って困ったことはありますか？🌴
+          actions:
+            - type: postback
+              display_text: ある
+              message_text: ある
+              tags:
+                - key: 4問目
+                  value: ある
+              dest: ある
+            - type: postback
+              display_text: 近々その予定がある
+              message_text: 近々その予定がある
+              tags:
+                - key: 4問目
+                  value: 近々その予定がある
+              dest: 近々その予定がある
+        node_name: actionlayer-5-actionid-2
+  ある:
+    contents:
+      - lineText: |-
+          大事な予定に生理が被ると、つらいですよね🤢
+
+          ピルを使えば、生理をずらすことが出来るんです💡
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/2fecb895ed87431bb0dd59c77df4e5f81035ca8538fa38fa00fbc3e1fbfc39e3.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/2fecb895ed87431bb0dd59c77df4e5f81035ca8538fa38fa00fbc3e1fbfc39e3.jpeg
+      - buttonBubble:
+          notification_text: 産婦人科系の病気は怖いですか？🏥
+          text: |-
+            【5/5問目】
+            卵巣がん・子宮体がんなど、産婦人科系の病気は怖いですか？🏥
+          actions:
+            - type: postback
+              display_text: 怖い
+              message_text: 怖い
+              tags:
+                - key: 5問目
+                  value: 怖い
+              dest: 怖い
+            - type: postback
+              display_text: よく知らないかも
+              message_text: よく知らないかも
+              tags:
+                - key: 5問目
+                  value: よく知らないかも
+              dest: よく知らないかも
+        node_name: actionlayer-6-actionid-1
+  近々その予定がある:
+    contents:
+      - lineText: |-
+          {{ user.name }}さんは、近々大事な予定があるんですね🙌✨
+
+          ピルを使えば、生理をずらすことが出来るんです💡
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/2fecb895ed87431bb0dd59c77df4e5f81035ca8538fa38fa00fbc3e1fbfc39e3.jpeg
+          preview: https://static.chatboost-cv.algoage.co.jp/image/2fecb895ed87431bb0dd59c77df4e5f81035ca8538fa38fa00fbc3e1fbfc39e3.jpeg
+      - buttonBubble:
+          notification_text: 産婦人科系の病気は怖いですか？🏥
+          text: |-
+            【5/5問目】
+            卵巣がん・子宮体がんなど、産婦人科系の病気は怖いですか？🏥
+          actions:
+            - type: postback
+              display_text: 怖い
+              message_text: 怖い
+              tags:
+                - key: 5問目
+                  value: 怖い
+              dest: 怖い
+            - type: postback
+              display_text: よく知らないかも
+              message_text: よく知らないかも
+              tags:
+                - key: 5問目
+                  value: よく知らないかも
+              dest: よく知らないかも
+        node_name: actionlayer-6-actionid-2
+  怖い:
+    contents:
+      - lineText: |-
+          卵巣がん、子宮体がんはどちらも死に至るリスクがあるので怖いですよね😱‍
+
+          実はピルには、卵巣がんや子宮体がんのリスクを下げる効果があると報告されています✨
+
+          また、大腸がんを予防したり、子宮内膜症の進行を防ぐ可能性があるという報告もあります💡
+      - buttonBubble:
+          notification_text: 相性診断の結果はこちら👀
+          text: |-
+            診断お疲れさまでした！🌟
+            タップして結果を見てみましょう👀
+          actions:
+            - type: postback
+              display_text: ▼診断結果▼
+              message_text: ▼診断結果▼
+              dest: 条件分岐
+        node_name: actionlayer-7-actionid-1
+  よく知らないかも:
+    contents:
+      - lineText: |-
+          卵巣がん、子宮体がんはどちらも死に至るリスクのある病気です😱
+
+          ピルには、卵巣がんや子宮体がんのリスクを下げる効果があると報告されています✨
+
+          また、大腸がんを予防したり、子宮内膜症の進行を防ぐ可能性があるという報告もあります💡
+      - buttonBubble:
+          notification_text: 相性診断の結果はこちら👀
+          text: |-
+            診断お疲れさまでした！🌟
+            タップして結果を見てみましょう👀
+          actions:
+            - type: postback
+              display_text: ▼診断結果▼
+              message_text: ▼診断結果▼
+              dest: 条件分岐
+        node_name: actionlayer-7-actionid-2
+  条件分岐:
+    contents:
+      - branches:
+          - conditions:
+              - user.tags["1問目"] == "今のところない"
+              - user.tags["2問目"] == "25〜38日"
+              - user.tags["3問目"] == "たまに気になる"
+              - user.tags["4問目"] == "ある"
+              - user.tags["5問目"] == "よく知らないかも"
+            dest: 結果1
+          - conditions:
+            dest: 結果2
+  結果1:
+    contents:
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/36f9295f2e0be7039e0be9e577ef1a0dd96b1779f4b575c50ffafc81f2ac7260.png
+          preview: https://static.chatboost-cv.algoage.co.jp/image/36f9295f2e0be7039e0be9e577ef1a0dd96b1779f4b575c50ffafc81f2ac7260.png
+ 
+      - lineText: |-
+          {{ user.name }} さんは生理周期が安定していて、生理症状も気にならないんですね👏
+
+          実は、ピルには他にも色々な効果があるんです💘
+
+          温泉やプールなどのイベントにあわせて生理日をズラしたり、卵巣がんや子宮体がんのリスクが下がることが報告されています🙌✨
+      
+      - buttonBubble:
+          notification_text: ピルについて。。。👀
+          text: ピルについて…
+          actions:
+            - type: postback
+              display_text: 相談したくなった！
+              message_text: 相談したくなった！
+              dest: 相談したくなった！
+            - type: postback
+              display_text: まだ不安…
+              message_text: まだ不安…
+              dest: まだ不安      
+        node_name: actionlayer-8-actionid-2
+
+  結果2:
+    contents:
+      - lineImage:
+          original: https://static.chatboost-cv.algoage.co.jp/image/db92da1d64c562e81566bb8d13516417642f54d25f5876afb7ff1a129546df5b.png
+          preview: https://static.chatboost-cv.algoage.co.jp/image/db92da1d64c562e81566bb8d13516417642f54d25f5876afb7ff1a129546df5b.png
+ 
+      - lineText: |-
+          {{ user.name }} さんのお悩みは、ピルを使うことで解決できる可能性が高いです💘
+
+          ピルを内服すると、排卵が抑制され、排卵痛が軽減されることが多いと言われています！
+
+          そのほかにもPMS、ニキビの改善に効果があると言われていたり、子宮がんや卵巣がんの発症のリスクが下がることが報告されています🙌
+      
+      - buttonBubble:
+          notification_text: ピルについて。。。👀
+          text: ピルについて…
+          actions:
+            - type: postback
+              display_text: 相談したくなった！
+              message_text: 相談したくなった！
+              dest: 相談したくなった！
+            - type: postback
+              display_text: まだ不安…
+              message_text: まだ不安…
+              dest: まだ不安
+        node_name: actionlayer-8-actionid-1
+
+  相談したくなった！:
+    contents:
+      - tagUpdate:
+          tags:
+            - key: 診断結果後
+              value: ピルが気になる
+      - lineText: |-
+          興味を持っていただけて嬉しいです🌟
+
+          クリニックフォアでは、スキマ時間を使ってオンラインで医師の診察を受けられます🌈
+
+          お薬も最短翌日にお手元に届きます👩💊
+      - carousel:
+          notification_text: 🌙クリニックフォアの5つの魅力🌙
+          columns:
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/f8b6072b1e5f820ea60896efdfb2c0ab98438d7f47f44ea07edd1972d6e92dd0.jpeg
+              title: クリニックフォアは、オンラインでピルを処方🌙
+              text: 忙しいあなたでもピル服用を始められる、オンライン完結のピル処方サービスです🌟お薬は、【ご自宅に最短翌日到着】🚚💨薬を取りに行く手間もかかりません👌
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=1
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/02ef1e41a340bd5f0c936d8562521db5d9124ca63f9aedd639ae13ef0cbd7d71.jpeg
+              title: クリニック在籍医師が診察するので安心です💐
+              text: オンラインは不安ですか…？クリニックフォアでは、必ず【クリニックの在籍医師】が診察します😉医師と直接話して、不安を解消しませんか？🌙
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=2
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/7c6995d94bd40b6295cabde50c2c6c21375b695344efcb5fdcff45c275737e40.jpeg
+              title: 国内最安値を追求！👛✨
+              text: ピルって高いイメージがありますよね💦クリニックフォアでは【安心・安全の国内承認薬】を【国内最安値】レベルでご提供⭐️お財布に優しくピルを始められます☺️
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=3
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/16836048320ba266e0a07412ed91104abf9854de0d26a7695d2b191c9dd2b802.jpeg
+              title: 困った時はいつでも診察予約を🌹
+              text: ピル服用中も、かかりつけ医のように気軽に診療予約をお取りください🌸クリニックでの【対面診療も可能】です😊あなたに寄り添ったアフターフォローをお約束します🤝
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=4
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/48438a2111c0f19dfa746a15418f940b3c9b608e3b69a49f86d24d612dc79deb.jpeg
+              title: あなたに合ったピルを、医師が提案します💊
+              text: たくさんの種類の日本製ピルを取扱っているので、医師と相談して【あなたの体に合ったピル】を選べます🌈️医師が診察した上で処方するので安心です⭐️
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=5
+              button_text_color: '#44689b'
+        node_name: cvlink-1
+
+  まだ不安:
+    contents:
+      - tagUpdate:
+          tags:
+            - key: 診断結果後
+              value: やっぱり不安
+      - lineText: |-
+          初めてのピルは不安ですよね...💦
+
+          クリニックフォアでは、クリニックに在籍する医師が{{ user.name }} さんのお悩みに寄り添います🏥
+
+          ピルについて、少しでも気になったら、クリニックフォアに相談してみてください✨
+      - carousel:
+          notification_text: 🌙クリニックフォアの5つの魅力🌙
+          columns:
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/f8b6072b1e5f820ea60896efdfb2c0ab98438d7f47f44ea07edd1972d6e92dd0.jpeg
+              title: クリニックフォアは、オンラインでピルを処方🌙
+              text: 忙しいあなたでもピル服用を始められる、オンライン完結のピル処方サービスです🌟お薬は、【ご自宅に最短翌日到着】🚚💨薬を取りに行く手間もかかりません👌
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=1
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/02ef1e41a340bd5f0c936d8562521db5d9124ca63f9aedd639ae13ef0cbd7d71.jpeg
+              title: クリニック在籍医師が診察するので安心です💐
+              text: オンラインは不安ですか…？クリニックフォアでは、必ず【クリニックの在籍医師】が診察します😉医師と直接話して、不安を解消しませんか？🌙
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=2
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/7c6995d94bd40b6295cabde50c2c6c21375b695344efcb5fdcff45c275737e40.jpeg
+              title: 国内最安値を追求！👛✨
+              text: ピルって高いイメージがありますよね💦クリニックフォアでは【安心・安全の国内承認薬】を【国内最安値】レベルでご提供⭐️お財布に優しくピルを始められます☺️
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=3
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/16836048320ba266e0a07412ed91104abf9854de0d26a7695d2b191c9dd2b802.jpeg
+              title: 困った時はいつでも診察予約を🌹
+              text: ピル服用中も、かかりつけ医のように気軽に診療予約をお取りください🌸クリニックでの【対面診療も可能】です😊あなたに寄り添ったアフターフォローをお約束します🤝
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=4
+              button_text_color: '#44689b'
+            - image_url: https://static.chatboost-cv.algoage.co.jp/image/48438a2111c0f19dfa746a15418f940b3c9b608e3b69a49f86d24d612dc79deb.jpeg
+              title: あなたに合ったピルを、医師が提案します
+              text: たくさんの種類の日本製ピルを取扱っているので、医師と相談して【あなたの体に合ったピル】を選べます🌈️医師が診察した上で処方するので安心です⭐️
+              action:
+                type: uri
+                display_text: 今すぐ診療予約▷
+                uri: https://atmarktension.com/link.php?i=pgy56natybym&m=mgy568ez4o5a&utm_source=cbcvline&openExternalBrowser=1&ccid=5
+              button_text_color: '#44689b'
+        node_name: cvlink-2
